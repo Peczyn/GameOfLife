@@ -45,6 +45,21 @@ public class TJFrame extends JFrame {
         });
         northPanel.add(stop);
 
+        JButton reset = new JButton("Reset");
+        reset.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                for(int i=0; i<Grid.matrix.size(); i++)
+                {
+                    for(int j=0; j<Grid.matrix.size(); j++)
+                    {
+                        Grid.matrix.get(i).set(j,0);
+                    }
+                }
+            }
+        });
+        northPanel.add(reset);
+
         tjpanel.setPreferredSize(new Dimension(800,800));
         root.add(northPanel, BorderLayout.NORTH);
         root.add(tjpanel, BorderLayout.CENTER);
