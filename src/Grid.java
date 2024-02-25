@@ -14,7 +14,7 @@ public class Grid {
             ArrayList<Integer> row = new ArrayList<>();
             for (int j = 0; j < size; j++) {
 //                row.add(random.nextInt(2)); //
-                if(i%10==0 || j%10==0) row.add(1);
+                if(i%2 != j%2) row.add(1);
                 else row.add(0);
             }
             matrix.add(row);
@@ -37,7 +37,7 @@ public class Grid {
 
             while(!isRunning){
                 try {
-                    sleep(0,10);
+                    sleep(0,100);
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
                 }
@@ -83,7 +83,7 @@ public class Grid {
 
 
             try {
-                sleep(5);
+                sleep(20);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
