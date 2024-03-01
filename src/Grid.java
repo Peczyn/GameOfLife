@@ -83,7 +83,7 @@ public class Grid {
 
 
             try {
-                sleep(5000);
+                sleep(500);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
