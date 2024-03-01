@@ -2,7 +2,7 @@ import javax.swing.*;
 
 public class Main {
     public static void main(String[] args) {
-        Grid grid = new Grid(200);
+        Grid grid = new Grid(20);
 
         TJFrame frame = new TJFrame();
 

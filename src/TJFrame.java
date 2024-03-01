@@ -64,7 +64,7 @@ public class TJFrame extends JFrame {
         //DODAJ TUTAJ ZMIANE SZYBKOSCI GRY CZY COS
         //I DODAJ WYBOR DODAWANEGO OBIEKTU MOZE TAKIE GOTOWCE
 
-        tjpanel.setPreferredSize(new Dimension(800,800));
+        tjpanel.setPreferredSize(new Dimension(600,600));
         root.add(northPanel, BorderLayout.NORTH);
         root.add(tjpanel, BorderLayout.CENTER);
 

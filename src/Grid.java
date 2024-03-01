@@ -37,7 +37,7 @@ public class Grid {
 
             while(!isRunning){
                 try {
-                    sleep(0,100);
+                    sleep(0,10);
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
                 }
@@ -83,7 +83,7 @@ public class Grid {
 
 
             try {
-                sleep(20);
+                sleep(5000);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
