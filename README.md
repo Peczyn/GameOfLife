@@ -46,10 +46,6 @@ Contributions to this project are welcome! If you have ideas for new features, i
 ### License:
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
----
-
-Feel free to customize this template to better suit your project. This README provides users with a quick overview of your "Game of Life" simulator, how to run it, interact with it, and contribute to its development.
-
 ### Some more photos:
 <img width= 32% alt="GameOfLife4" src="https://github.com/Peczyn/GameOfLife/assets/142744067/26807ddd-9ae9-471f-b1a2-3bda4af0ea23">
 <img width= 32%  alt="GameOfLife5" src="https://github.com/Peczyn/GameOfLife/assets/142744067/ce2f2e1b-92ab-436d-8ecd-692a0f81d34e">
