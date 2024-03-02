@@ -6,8 +6,16 @@ public class Grid {
     public static ArrayList<ArrayList<Integer>> neighbours;
     public static boolean isRunning = false;
 
+    public static int delay = 5;
+
     public Grid(int size){
         Random random = new Random();
+        generateGrid(size);
+        (new gridNeighboursThread()).start();
+    }
+
+    public static void generateGrid(int size)
+    {
         matrix = new ArrayList<>();
         neighbours = new ArrayList<>();
         for (int i = 0; i < size; i++) {
@@ -18,7 +26,6 @@ public class Grid {
                 else row.add(0);
             }
             matrix.add(row);
-
         }
         for (int i = 0; i < size; i++) {
             ArrayList<Integer> row = new ArrayList<>();
@@ -27,13 +34,12 @@ public class Grid {
             }
             neighbours.add(row);
         }
-        (new gridNeighboursThread()).start();
     }
 
     class gridNeighboursThread extends Thread{
         @Override
         public void run(){
-            int n = matrix.size();
+
 
             while(!isRunning){
                 try {
@@ -43,19 +49,19 @@ public class Grid {
                 }
             }
 
-            for(int i=0; i<n; i++)
+            for(int i=0; i<matrix.size(); i++)
             {
-                for(int j=0; j<n; j++)
+                for(int j=0; j<matrix.size(); j++)
                 {
                     int neg = 0;
                     if(i>0 && matrix.get(i-1).get(j) == 1) {neg++;}
                     if(j>0 && matrix.get(i).get(j-1) == 1) {neg++;}
-                    if(i<n-1 && matrix.get(i+1).get(j) == 1) {neg++;}
-                    if(j<n-1 && matrix.get(i).get(j+1) == 1) {neg++;}
+                    if(i<matrix.size()-1 && matrix.get(i+1).get(j) == 1) {neg++;}
+                    if(j<matrix.size()-1 && matrix.get(i).get(j+1) == 1) {neg++;}
                     if(i>0 && j>0 && matrix.get(i-1).get(j-1) == 1) {neg++;}
-                    if(i<n-1 && j<n-1 && matrix.get(i+1).get(j+1) == 1) {neg++;}
-                    if(i>0 && j<n-1 && matrix.get(i-1).get(j+1) == 1) {neg++;}
-                    if(i<n-1 && j>0 && matrix.get(i+1).get(j-1) == 1) {neg++;}
+                    if(i<matrix.size()-1 && j<matrix.size()-1 && matrix.get(i+1).get(j+1) == 1) {neg++;}
+                    if(i>0 && j<matrix.size()-1 && matrix.get(i-1).get(j+1) == 1) {neg++;}
+                    if(i<matrix.size()-1 && j>0 && matrix.get(i+1).get(j-1) == 1) {neg++;}
 
                     neighbours.get(i).set(j,neg);
                 }
@@ -83,7 +89,7 @@ public class Grid {
 
 
             try {
-                sleep(500);
+                sleep(2000/delay);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }

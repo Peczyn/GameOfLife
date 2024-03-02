@@ -78,9 +78,9 @@ public class TJPanel extends JPanel{
                 Point cords = getMousePosition();
                 if(cords==null) return;
 
-                System.out.println(cords);
-                System.out.println(getWidth());
-                System.out.println(getHeight());
+//                System.out.println(cords);
+//                System.out.println(getWidth());
+//                System.out.println(getHeight());
 
                 int row = cords.y/(getWidth()/Grid.matrix.size());
                 int col = cords.x/(getHeight()/Grid.matrix.size());
